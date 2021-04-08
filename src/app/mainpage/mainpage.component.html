@@ -1,0 +1,95 @@
+
+<div class="nav-links">
+    <img src="../../assets/code mosh.jpg" alt="Girl in a jacket"  width="200px"  >
+    <ul>
+        <a href="#"><li>Forum</li></a>
+        <a href="#"><li>Courses</li></a>
+        <a href="#"><li>My courses</li></a>
+        <a href="#"><li>subscribe</li></a>
+    </ul>
+
+
+</div>
+
+<div class="select" >
+
+   
+      
+          <select [(ngModel)]="selectedCategory" (ngModelChange)="FilterCat(selectedCategory)">
+              <!-- <option value="Category">---Category---</option> -->
+              <option *ngFor="let x of courses" [value]="x.viewvalue">{{x.viewvalue}}</option>
+          </select>
+     
+       
+      <select [(ngModel)]="selectedauthor" (ngModelChange)="FilterAut1(selectedauthor)" >
+          <!-- <option>--Author--</option> -->
+          <option *ngFor="let y of authors" [value]="y.viewvalue">{{y.viewvalue}}</option>
+      </select>
+  
+
+</div>
+<div class="search-box">
+    <input type="text"   name="search" [(ngModel)]="selectedSearch" (keyup)="Searchresult($event)"  placeholder="search">
+    <!-- <span class="material-icons">
+        search
+    </span> -->
+    <p (click)="onClick(selectedSearch)">{{selectedSearch}}</p>
+    </div>
+    <div class="mat-cards" *ngIf="showsearcharray">
+        <mat-card *ngFor="let course of searcharray">
+            <mat-card-title class="main-card-title">{{course.title}}</mat-card-title>
+            <mat-card-title class="main-card-title">{{course.description}}</mat-card-title>
+            <mat-card-title class="main-card-title">{{course.author}}</mat-card-title>
+            <mat-card-title class="main-card-title">{{course.coursetype}}</mat-card-title>
+        </mat-card>
+      
+          
+    </div>
+
+    <div class="mat-cards" *ngIf="showdummyarray">
+        <mat-card *ngFor="let course of dummy">
+            <mat-card-title class="main-card-title">{{course.title}}</mat-card-title>
+            <mat-card-title class="main-card-title">{{course.description}}</mat-card-title>
+            <mat-card-title class="main-card-title">{{course.author}}</mat-card-title>
+            <mat-card-title class="main-card-title">{{course.coursetype}}</mat-card-title>
+        </mat-card>
+    </div>
+    <div class="mat-cards" *ngIf="shownamearray">
+        <mat-card *ngFor="let course of name">
+            <mat-card-title class="main-card-title">{{course.title}}</mat-card-title>
+            <mat-card-title class="main-card-title">{{course.description}}</mat-card-title>
+            <mat-card-title class="main-card-title">{{course.author}}</mat-card-title>
+            <mat-card-title class="main-card-title">{{course.coursetype}}</mat-card-title>
+        </mat-card>
+      
+          
+    </div>
+    <div class="mat-cards" *ngIf="showauthorarray">
+        <mat-card *ngFor="let course of dummy2">
+            <mat-card-title class="main-card-title">{{course.title}}</mat-card-title>
+            <mat-card-title class="main-card-title">{{course.description}}</mat-card-title>
+            <mat-card-title class="main-card-title">{{course.author}}</mat-card-title>
+            <mat-card-title class="main-card-title">{{course.coursetype}}</mat-card-title>
+        </mat-card>
+      
+          
+    </div>
+
+      
+
+    
+
+
+
+    
+    
+
+
+  
+
+
+
+
+
+
+
