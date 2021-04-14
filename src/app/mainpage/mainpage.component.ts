@@ -165,6 +165,7 @@ export class MainpageComponent implements OnInit {
      this.searchauto=ser.target.value
      this.searcharray = []
      this.showsearcharray=true
+     this.showdummyarray=false
      this.dummy.forEach((item:any) => {
       const i = this.searcharray.findIndex((k:any)=>k.title===this.searchauto)
        if(item.title.indexOf(this.searchauto)>=0){
